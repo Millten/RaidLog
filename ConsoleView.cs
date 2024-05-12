@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -81,21 +82,43 @@ ASCII art created using assets from: http://patorjk.com/software/taag/
         {
             Console.Clear();
             string prompt = logo + "Select player to display statistics";
-            string[] options = { "Emil", "Millten", "Return to main menu" };
+
+
+            PlayerParser parser = new PlayerParser();
+            List<Player> players = parser.Parse(@"Data\TT2MasterAppExport.csv");
+            string[] options = {
+                players[0].Name,
+                players[1].Name,
+                players[2].Name,
+                players[3].Name,
+                players[4].Name,
+                "Return to main menu"
+            };
+
             Menu playerMenu = new Menu(prompt, options);
             int selectedIndex = playerMenu.Run();
 
-            // LogImport log = new LogImport();
+            ConsolePlayerView dP = new ConsolePlayerView();
 
 
             switch (selectedIndex)
             {
                 case 0:
-                    // log.LogImportText();
+                    dP.DiplayPlayerView(0);
                     break;
                 case 1:
+                    dP.DiplayPlayerView(1);
                     break;
                 case 2:
+                    dP.DiplayPlayerView(2);
+                    break;
+                case 3:
+                    dP.DiplayPlayerView(3);
+                    break;
+                case 4:
+                    dP.DiplayPlayerView(4);
+                    break;
+                case 5:
                     RunMainMenu();
                     break;
             }

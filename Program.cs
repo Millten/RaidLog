@@ -11,7 +11,8 @@ namespace RaidLog
             ConsoleView view = new ConsoleView();
             view.Start();
 
-        
+
+       
         }
     }
 }
