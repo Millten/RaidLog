@@ -1,9 +1,17 @@
-﻿namespace RaidLog;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-class Program
+namespace RaidLog
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello, World!");
+        static void Main(string[] args)
+        {
+            ConsoleView view = new ConsoleView();
+            view.Start();
+
+        
+        }
     }
 }
