@@ -9,7 +9,6 @@ namespace RaidLog
         public string PlayerId { get; set; }
         public string Name { get; set; }
         public int MaxStage { get; set; }
-
         public string ClanRole { get; set; }
 
     }
